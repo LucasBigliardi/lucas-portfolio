@@ -36,7 +36,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2">07. Conexão</h2>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2">05. Conexão</h2>
           <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Fale Comigo</h3>
         </div>
 

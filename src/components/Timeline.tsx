@@ -59,20 +59,19 @@ export default function Timeline() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2">05. Trajetória</h2>
+          <h2 className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2">04. Trajetória</h2>
           <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Linha do Tempo</h3>
-          
+
           {/* Timeline Filter Controls */}
           <div className="flex flex-wrap justify-center gap-2 mt-8">
             {(["Tudo", "Experiência", "Formação", "Certificações"] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`text-xs px-4 py-2 rounded-full border transition-all duration-200 ${
-                  filter === cat
+                className={`text-xs px-4 py-2 rounded-full border transition-all duration-200 ${filter === cat
                     ? "bg-white text-zinc-950 border-white font-medium"
                     : "bg-transparent text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-white"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
