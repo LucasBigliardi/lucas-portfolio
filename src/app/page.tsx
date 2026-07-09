@@ -3,10 +3,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Technologies from "@/components/Technologies";
 import Projects from "@/components/Projects";
-import FeaturedProject from "@/components/FeaturedProject";
 import Timeline from "@/components/Timeline";
-import Skills from "@/components/Skills";
-import Statistics from "@/components/Statistics";
+// Removido: Statistics
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,10 +17,8 @@ export default function Home() {
         <About />
         <Technologies />
         <Projects />
-        <FeaturedProject />
         <Timeline />
-        <Skills />
-        <Statistics />
+        {/* Removido: <Statistics /> */}
         <Contact />
       </main>
       <Footer />

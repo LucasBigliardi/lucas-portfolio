@@ -10,7 +10,6 @@ const navItems = [
   { name: "Tecnologias", href: "#tecnologias" },
   { name: "Projetos", href: "#projetos" },
   { name: "Trajetória", href: "#trajetoria" },
-  { name: "Habilidades", href: "#habilidades" },
   { name: "Contato", href: "#contato" },
 ];
 
