@@ -138,9 +138,9 @@ export default function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors py-1.5 px-3 rounded-full hover:bg-zinc-900"
+                        className="flex-1 inline-flex items-center justify-center gap-2 text-sm text-zinc-300 hover:text-white bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all py-2.5 px-4 rounded-xl hover:bg-zinc-800 font-medium"
                       >
-                        <Github className="w-3.5 h-3.5" />
+                        <Github className="w-4 h-4" />
                         GitHub
                       </a>
                     )}
@@ -149,9 +149,9 @@ export default function Projects() {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors py-1.5 px-3 rounded-full hover:bg-zinc-900"
+                        className="flex-1 inline-flex items-center justify-center gap-2 text-sm text-zinc-950 bg-white hover:bg-zinc-200 transition-all py-2.5 px-4 rounded-xl font-semibold shadow-sm"
                       >
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-4 h-4" />
                         Demonstração
                       </a>
                     )}

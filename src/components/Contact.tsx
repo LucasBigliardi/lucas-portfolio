@@ -8,25 +8,25 @@ export default function Contact() {
     {
       icon: <Mail className="w-5 h-5 text-zinc-400" />,
       label: "E-mail",
-      value: "lucas@example.com",
-      href: "mailto:lucas@example.com"
+      value: "lucasbigliardivicente@gmail.com",
+      href: "mailto:lucasbigliardivicente@gmail.com"
     },
     {
       icon: <Linkedin className="w-5 h-5 text-zinc-400" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/lucas",
-      href: "https://linkedin.com/in/lucas"
+      value: "linkedin.com/in/lucasbigliardi",
+      href: "https://linkedin.com/in/lucasbigliardi"
     },
     {
       icon: <Github className="w-5 h-5 text-zinc-400" />,
       label: "GitHub",
-      value: "github.com/lucas",
-      href: "https://github.com/lucas"
+      value: "github.com/LucasBigliardi",
+      href: "https://github.com/LucasBigliardi"
     },
     {
       icon: <MessageSquare className="w-5 h-5 text-zinc-400" />,
       label: "WhatsApp",
-      value: "+55 (11) 99999-9999",
+      value: "+55 (41) 99999-9999",
       href: "https://wa.me/5511999999999"
     }
   ];
