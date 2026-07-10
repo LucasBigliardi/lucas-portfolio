@@ -23,7 +23,8 @@ const projects: Project[] = [
     technologies: ["WordPress", "Elementor", "HTML", "CSS", "Copywriting"],
     githubUrl: "",
     demoUrl: "https://posterapiadecasal.com/",
-    imageAlt: "Landing Page Pós-Graduação em Terapia de Casal"
+    imageAlt: "Landing Page Pós-Graduação em Terapia de Casal",
+    imageUrl: "/posterapiadecasal.png"
   },
   {
     title: "Landing Page - Pós-Graduação Psicologia Sistêmica",
