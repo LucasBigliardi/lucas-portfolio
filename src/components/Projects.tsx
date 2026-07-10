@@ -38,9 +38,9 @@ const projects: Project[] = [
   },
   {
     title: "ElevaCV",
-    category: "Full-Stack",
+    category: "Frontend",
     description: "Otimizador inteligente de currículos e perfis do LinkedIn utilizando Inteligência Artificial, gerando recomendações personalizadas para se destacar em processos seletivos.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Gemini API"],
     githubUrl: "https://github.com/LucasBigliardi/ElevaCV",
     demoUrl: "https://lucasbigliardi.github.io/ElevaCV/",
     imageAlt: "ElevaCV Screenshot representation",
