@@ -12,6 +12,7 @@ interface Project {
   githubUrl: string;
   demoUrl: string;
   imageAlt: string;
+  imageUrl?: string;
 }
 
 const projects: Project[] = [
@@ -38,9 +39,10 @@ const projects: Project[] = [
     category: "Full-Stack",
     description: "Otimizador inteligente de currículos e perfis do LinkedIn utilizando Inteligência Artificial, gerando recomendações personalizadas para se destacar em processos seletivos.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js"],
-    githubUrl: "https://github.com/LucasBigliardi/eleva-cv",
-    demoUrl: "https://lucasbigliardi.github.io/eleva-cv/",
-    imageAlt: "Talent Boost AI Screenshot representation"
+    githubUrl: "https://github.com/LucasBigliardi/ElevaCV",
+    demoUrl: "https://lucasbigliardi.github.io/ElevaCV/",
+    imageAlt: "ElevaCV Screenshot representation",
+    imageUrl: "/elevacv.png"
   }
 ];
 
@@ -70,8 +72,8 @@ export default function Projects() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`text-xs px-4 py-2 rounded-full border transition-all duration-200 ${activeCategory === cat
-                    ? "bg-white text-zinc-950 border-white font-medium"
-                    : "bg-transparent text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-white"
+                  ? "bg-white text-zinc-950 border-white font-medium"
+                  : "bg-transparent text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-white"
                   }`}
               >
                 {cat}
@@ -87,21 +89,32 @@ export default function Projects() {
               key={project.title}
               className="glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col group h-full transition-all duration-300"
             >
-              {/* Project Image Placeholder (Premium CSS Gradient) */}
-              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-850 to-zinc-950 border-b border-zinc-800 flex items-center justify-center p-8 select-none">
-                {/* Decorative mesh */}
-                <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:12px_12px] opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-white/5 to-black/20" />
+              {/* Project Image */}
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-850 to-zinc-950 border-b border-zinc-800 flex items-center justify-center select-none">
+                {project.imageUrl ? (
+                  <img
+                    src={project.imageUrl}
+                    alt={project.imageAlt}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <>
+                    {/* Decorative mesh */}
+                    <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:12px_12px] opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-white/5 to-black/20" />
 
-                {/* Centered Graphic */}
-                <div className="text-center z-10 transition-transform duration-300 group-hover:scale-105">
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-600 block mb-1">PROJETO {String(idx + 1).padStart(2, '0')}</span>
-                  <span className="text-white font-semibold tracking-wide text-lg block">{project.title.split(" ")[0]}</span>
-                  <span className="text-zinc-500 font-light text-xs block">{project.category}</span>
-                </div>
+                    {/* Centered Graphic */}
+                    <div className="text-center z-10 transition-transform duration-300 group-hover:scale-105 p-8">
+                      <span className="text-[10px] font-mono tracking-widest text-zinc-600 block mb-1">PROJETO {String(idx + 1).padStart(2, '0')}</span>
+                      <span className="text-white font-semibold tracking-wide text-lg block">{project.title.split(" ")[0]}</span>
+                      <span className="text-zinc-500 font-light text-xs block">{project.category}</span>
+                    </div>
+                  </>
+                )}
 
                 {/* Categories Badge on Image */}
-                <span className="absolute top-4 left-4 bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-md">
+                <span className="absolute top-4 left-4 bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-md z-20">
                   {project.category}
                 </span>
               </div>
