@@ -32,7 +32,8 @@ const projects: Project[] = [
     technologies: ["WordPress", "Elementor", "HTML", "CSS", "SEO"],
     githubUrl: "",
     demoUrl: "https://posterapiasistemica.com/",
-    imageAlt: "Landing Page Pós-Graduação em Psicologia Sistêmica"
+    imageAlt: "Landing Page Pós-Graduação em Psicologia Sistêmica",
+    imageUrl: "/posterapiasistemica.png"
   },
   {
     title: "ElevaCV",
