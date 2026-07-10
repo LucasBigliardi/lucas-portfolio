@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Mail } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Github, Linkedin } from "./Icons";
 
 const navItems = [
@@ -16,8 +16,13 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("inicio");
+  const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
+    // Check local storage or document class on mount
+    const isLightMode = document.documentElement.classList.contains("light");
+    setIsLight(isLightMode);
+
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.substring(1));
       const scrollPosition = window.scrollY + 100;
@@ -39,6 +44,18 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const nextLight = !isLight;
+    setIsLight(nextLight);
+    if (nextLight) {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -67,10 +84,10 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Social Icons (Desktop) */}
+          {/* Social Icons & Theme Toggle (Desktop) */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/LucasBigliardi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-400 hover:text-white transition-colors"
@@ -85,10 +102,24 @@ export default function Navbar() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
+            <button
+              onClick={toggleTheme}
+              className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900/50 transition-colors border border-transparent hover:border-zinc-800/80 cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Theme Toggle & Mobile Menu Button (Mobile) */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900/50 transition-colors cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {isLight ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-zinc-400 hover:text-white focus:outline-none transition-colors"
@@ -119,23 +150,25 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <div className="flex space-x-6 pt-2">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <div className="flex items-center justify-between pt-2">
+              <div className="flex space-x-6">
+                <a
+                  href="https://github.com/LucasBigliardi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
