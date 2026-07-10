@@ -161,3 +161,99 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Smooth theme transition for color-based properties (prevents abrupt flashes) */
+html,
+body,
+nav,
+div,
+section,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+svg,
+img {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Light mode overrides using custom variables (provides high contrast, premium aesthetic) */
+html.light {
+  /* Main Background - Soft Cool Gray/Slate-50 */
+  --color-zinc-950: #f8fafc; 
+  
+  /* Cards & Sections - Pure White for layer depth */
+  --color-zinc-900: #ffffff; 
+  
+  /* Borders - Soft Slate-Gray */
+  --color-zinc-800: #cbd5e1; 
+  --color-zinc-700: #94a3b8; 
+  
+  /* Texts & Content */
+  --color-zinc-600: #64748b;
+  --color-zinc-500: #475569; 
+  --color-zinc-400: #334155; 
+  --color-zinc-300: #1e293b; 
+  --color-zinc-200: #0f172a; 
+  --color-zinc-100: #020617; 
+
+  /* White & Black swap */
+  --color-white: #0f172a; 
+  --color-black: #ffffff;
+}
+
+/* Light mode overrides for layout elements */
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Glass panel adjustments in light mode (more depth and subtle shadows) */
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(148, 163, 184, 0.5) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1) !important;
+}
+
+html.light .text-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Extra overrides for specific UI elements to ensure clean visibility in light mode */
+html.light .border-zinc-800 {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .border-zinc-900 {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .bg-zinc-900\/30 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html.light .bg-zinc-950\/80 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+}
+
+html.light .bg-zinc-900\/40 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
