@@ -34,12 +34,12 @@ const projects: Project[] = [
     imageAlt: "Landing Page Pós-Graduação em Psicologia Sistêmica"
   },
   {
-    title: "Talent Boost AI",
+    title: "ElevaCV",
     category: "Full-Stack",
     description: "Otimizador inteligente de currículos e perfis do LinkedIn utilizando Inteligência Artificial, gerando recomendações personalizadas para se destacar em processos seletivos.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js"],
-    githubUrl: "https://github.com/LucasBigliardi/talent-boost-ai",
-    demoUrl: "https://lucasbigliardi.github.io/talent-boost-ai/",
+    githubUrl: "https://github.com/LucasBigliardi/eleva-cv",
+    demoUrl: "https://lucasbigliardi.github.io/eleva-cv/",
     imageAlt: "Talent Boost AI Screenshot representation"
   }
 ];
@@ -62,18 +62,17 @@ export default function Projects() {
             <h2 className="text-xs uppercase tracking-widest text-zinc-500 font-mono mb-2">03. Portfólio</h2>
             <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Projetos em Destaque</h3>
           </div>
-          
+
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`text-xs px-4 py-2 rounded-full border transition-all duration-200 ${
-                  activeCategory === cat
+                className={`text-xs px-4 py-2 rounded-full border transition-all duration-200 ${activeCategory === cat
                     ? "bg-white text-zinc-950 border-white font-medium"
                     : "bg-transparent text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-white"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -93,7 +92,7 @@ export default function Projects() {
                 {/* Decorative mesh */}
                 <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:12px_12px] opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-white/5 to-black/20" />
-                
+
                 {/* Centered Graphic */}
                 <div className="text-center z-10 transition-transform duration-300 group-hover:scale-105">
                   <span className="text-[10px] font-mono tracking-widest text-zinc-600 block mb-1">PROJETO {String(idx + 1).padStart(2, '0')}</span>
